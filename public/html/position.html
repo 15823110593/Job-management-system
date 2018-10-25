@@ -1,10 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<title>职位管理</title>
+	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-	
+	<div class="container">
+		<!-- 导航条 -->
+		<nav class="navbar navbar-default navbar-inverse">
+			<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			    <span class="sr-only">Toggle navigation</span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">职位管理系统</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <ul class="nav navbar-nav">
+			    <li><a href="/index.html">主页</a></li>
+			    <li class="active"><a href="#">职位管理</a></li>
+			  </ul>
+			  
+			  <ul class="nav navbar-nav navbar-right">
+			    <li data-toggle="modal" data-target="#logModal"><a href="#">登录</a></li>
+			    <li data-toggle="modal" data-target="#regModal"><a href="#">注册</a></li>
+			  </ul>
+			</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		
+		<!-- 注册模态框 -->
+		<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">用户注册</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+				  <div class="form-group">
+				    <label for="regUserName">用户名</label>
+				    <input type="text" class="form-control" id="regUserName" placeholder="请输入用户名">
+				  </div>
+				  <div class="form-group">
+				    <label for="regPassword">密码</label>
+				    <input type="password" class="form-control" id="regPassword" placeholder="请输入密码">
+				  </div>
+				  <div class="form-group">
+				    <label for="regConfPassword">确认密码</label>
+				    <input type="password" class="form-control" id="regConfPassword" placeholder="再次输入密码">
+				  </div>
+				  <div class="form-group">
+				    <label for="regEmail">邮箱</label>
+				    <input type="email" class="form-control" id="regEmail" placeholder="请输入e-mail地址">
+				  </div>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		        <button type="button" class="btn btn-primary">注册</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- 登录模态框 -->
+		<div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">用户注册</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+				  <div class="form-group">
+				    <label for="regUserName">用户名</label>
+				    <input type="text" class="form-control" id="regUserName" placeholder="请输入用户名">
+				  </div>
+				  <div class="form-group">
+				    <label for="regPassword">密码</label>
+				    <input type="password" class="form-control" id="regPassword" placeholder="请输入密码">
+				  </div>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		        <button type="button" class="btn btn-primary">登录</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<!-- 表格 -->
+		<table class="table table-bordered">
+			<caption>职位管理 <button type="button" data-toggle="modal" data-target="#jobInfoModal" class="btn btn-primary pull-right">添加</button></caption>
+		  <thead>
+		  	<tr>
+		  		<td>序号</td>
+		  		<td>公司logo</td>
+		  		<td>职位名称</td>
+		  		<td>公司名称</td>
+		  		<td>工作经验</td>
+		  		<td>职位类型</td>
+		  		<td>工作地点</td>
+		  		<td>岗位薪资</td>
+		  		<td>操作</td>
+		  	</tr>
+		  </thead>
+		  <tbody>
+		  		<tr>
+			  		<td>1</td>
+			  		<td><img src=""></td>
+			  		<td>名称</td>
+			  		<td>名称</td>
+			  		<td>经验</td>
+			  		<td>类型</td>
+			  		<td>地点</td>
+			  		<td>薪资</td>
+			  		<td><a href="javascript:void(0);">修改</a>&nbsp;<a href="javascript:void(0);">删除</a></td>
+			  	</tr>
+			  	<tr>
+			  		<td>1</td>
+			  		<td><img src=""></td>
+			  		<td>职位名称</td>
+			  		<td>公司名称</td>
+			  		<td>工作经验</td>
+			  		<td>职位类型</td>
+			  		<td>工作地点</td>
+			  		<td>岗位薪资</td>
+			  		<td><a href="javascript:void(0);">修改</a>&nbsp;<a href="javascript:void(0);">删除</a></td>
+			  	</tr>
+		  </tbody>
+		</table>
+		<!-- 分页 -->
+		<nav aria-label="Page navigation" class="pull-right">
+		  <ul class="pagination">
+		    <li>
+		      <a href="#" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		    <li class="active"><a href="#">1</a></li>
+		    <li>
+		      <a href="#" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
+
+  		<!-- 职位信息模态框 -->
+		<div class="modal fade" id="jobInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">职位信息</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+				  <div class="form-group">
+				    <label for="compLogo">公司logo</label>
+				    <input type="file" class="form-control" id="compLogo" placeholder="">
+				  </div>
+				  <div class="form-group">
+				    <label for="jobName">职位名称</label>
+				    <input type="password" class="form-control" id="jobName" placeholder="请输入职位名称">
+				  </div>
+				  <div class="form-group">
+				    <label for="compName">公司名称</label>
+				    <input type="password" class="form-control" id="compName" placeholder="请输入公司名称">
+				  </div>
+				  <div class="form-group">
+				    <label for="experience">工作经验</label>
+				    <input type="email" class="form-control" id="experience" placeholder="请输入工作经验">
+				  </div>
+				  <div class="form-group">
+				    <label for="jobType">职位类型</label>
+				    <input type="email" class="form-control" id="jobType" placeholder="请输入职位类型">
+				  </div>
+				  <div class="form-group">
+				    <label for="workPlace">工作地点</label>
+				    <input type="email" class="form-control" id="workPlace" placeholder="请输入工作地点">
+				  </div>
+				  <div class="form-group">
+				    <label for="salary">岗位薪资</label>
+				    <input type="email" class="form-control" id="salary" placeholder="请输入岗位薪资">
+				  </div>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		        <button type="button" class="btn btn-primary">提交</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+	<script src="/lib/jquery/jquery-1.12.4.min.js"></script>
+	<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="lib/jquery-plugins/jquery.cookie.js"></script>
 </body>
 </html>
